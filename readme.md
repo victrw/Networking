@@ -80,7 +80,7 @@ net3
 ```
 sudo nmcli con modify ‘System enp0s3’ ipv4.addresses 10.20.30.10/24 ipv4.method manual && sudo nmcli con up ‘System enp0s3’ 
 ```
-**Note: Replace [System enpos3] and the ipv4 address [10.20.30.10/24] with your own interface name! REMEMBER TO ADD **ALL** INTERFACES 'enp0s8, enp0s9, ...'**
+**Note: Replace [System enpos3] and the ipv4 address [10.20.30.10/24] with your own interface name! REMEMBER TO ADD **ALL** INTERFACES 'enp0s8, enp0s9, ...' AND SET THEIR IP ADDRESSES!!**
 
 ### **2.2.** Adding ip forwarding 
 To edit the .conf file, type the command:
@@ -108,11 +108,11 @@ sudo vim /etc/dhcp/dhcpd.conf
 
 Your subnet will be your Network IP. Example file:
 ```
-Subnet 192.168.172.0 netmask 255.255.255.240 { 
+subnet 192.168.172.0 netmask 255.255.255.240 { 
 
-Option routers 192.168.172.1; 
+option routers 192.168.172.1; 
 
-Range 192.168.172.2 192.168.172.14; 
+range 192.168.172.2 192.168.172.14; 
 
 } 
 ```
@@ -128,7 +128,7 @@ sudo systemctl start dhcpd
 ```
 Optional:
 ```
-Systemctl status dhcpd 
+systemctl status dhcpd 
 ```
 
 ### 3.1. Bird 
@@ -137,11 +137,11 @@ Systemctl status dhcpd
 
 Deleting default bird.conf file:
 ```
-Sudo rm /etc/bird.conf 
+sudo rm /etc/bird.conf 
 ```
-Creating and editing the new file:
+creating and editing the new file:
 ```
-Sudo vim /etc/bird.conf 
+sudo vim /etc/bird.conf 
 ```
 
 #### Bird Script Example
@@ -150,6 +150,7 @@ log syslog all:
 router id 10.20.30.10; 
 protocol device { 
 } 
+
 protocol kernel { 
     ipv4 { 
         export all; 
@@ -188,4 +189,4 @@ Or
 ip route 
 ```
 
-# Gg guys.
+# Start pinging/traceroute. If it doesn't work then check your IP addresses.
