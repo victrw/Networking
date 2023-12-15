@@ -93,7 +93,7 @@ net.ipv4.ip_forward = 1
 ```
 exit insert mode and save with **:wq**. To check for errors, enter the command:
 ```
-sudo sysctl –system  
+sudo sysctl -–system  
 ```
 
 Nice! You've finished adding in the interface.
