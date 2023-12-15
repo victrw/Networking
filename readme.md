@@ -47,7 +47,7 @@ Create another linked clone of centOS_8 and name it accordingly.
 
 Once done, go into the network settings and enable Network Adapter.
 
-Choose Attacked to:
+Choose Attached to:
 ```
 Internal Network
 ```
