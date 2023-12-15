@@ -80,7 +80,7 @@ net3
 ```
 sudo nmcli con modify ‘System enp0s3’ ipv4.addresses 10.20.30.10/24 ipv4.method manual && sudo nmcli con up ‘System enp0s3’ 
 ```
-**Note: Replace [System enpos3] and the ipv4 address [10.20.30.10/24] with your own interface name!**
+**Note: Replace [System enpos3] and the ipv4 address [10.20.30.10/24] with your own interface name! REMEMBER TO ADD **ALL** INTERFACES 'enp0s8, enp0s9, ...'**
 
 ### **2.2.** Adding ip forwarding 
 To edit the .conf file, type the command:
@@ -116,7 +116,7 @@ Range 192.168.172.2 192.168.172.14;
 
 } 
 ```
-**Note: Option router is your interface IP. Make SURE that your range does not include any of your option routers!**
+**Note: Option router is your interface IP. Make SURE that your range does not include any of your option routers! MAKE SURE ALL INTERFACES ARE MADE!**
 
 Syntax Error checking: 
 ```
