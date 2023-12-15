@@ -76,13 +76,13 @@ net3
 ## Setting up interfaces in Router VM
 **Using ip 192.168.172.0/28** 
 
-### **2.1** nmcli command:
+### **2.** nmcli command:
 ```
 sudo nmcli con modify ‘System enp0s3’ ipv4.addresses 10.20.30.10/24 ipv4.method manual && sudo nmcli con up ‘System enp0s3’ 
 ```
 **Note: Replace [System enpos3] and the ipv4 address [10.20.30.10/24] with your own interface name! REMEMBER TO ADD **ALL** INTERFACES 'enp0s8, enp0s9, ...' AND SET THEIR IP ADDRESSES!!**
 
-### **2.2.** Adding ip forwarding 
+### **2.1.** Adding ip forwarding 
 To edit the .conf file, type the command:
 ```
 sudo vim /etc/sysctl.conf 
@@ -139,7 +139,7 @@ Deleting default bird.conf file:
 ```
 sudo rm /etc/bird.conf 
 ```
-creating and editing the new file:
+Creating and editing the new file:
 ```
 sudo vim /etc/bird.conf 
 ```
